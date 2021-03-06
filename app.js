@@ -27,12 +27,10 @@ app.get("/", function (req, res) {
 
 app.get("/posts/:content", function (req, res) {
     posts.forEach(post => {
-        // console.log(_.lowerCase(post.title));
         if (_.lowerCase(post.title) === _.lowerCase(req.params.content)) {
-            console.log("Match Found");
+            res.render("post", { postTitle: post.title, postContent: post.text });
         }
     });
-    // console.log(_.lowerCase(req.params.content));
 });
 
 app.get("/about", function (req, res) {
