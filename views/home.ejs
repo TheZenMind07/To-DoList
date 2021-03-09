@@ -9,7 +9,8 @@
       <%= post.title %>
     </h2>
     <p>
-      <%= post.text %>
+      <%= post.text.substring(0,100) + "..." %>
+        <a href="/posts/<%= post.title %>">Read More</a>
     </p>
     <% }); %>
       <!--[if lt IE 7]>
